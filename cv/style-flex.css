@@ -112,14 +112,7 @@ body {
   .box {
     flex-direction: column;
   }
-  .VS {
-    max-width: 100%;
-    padding: 10px;
-  }
-  .VP {
-    max-width: 100%;
-    padding: 10px;
-  }
+  
 
   .diagonal {
     max-width: 120%;
@@ -127,13 +120,6 @@ body {
 }
 
 @media screen and (max-width: 820px) {
-  .VS {
-    padding: 5px;
-  }
-  .VP {
-    max-width: 100%;
-    padding: 10px;
-  }
 
   .icons {
     margin-left: auto !important;
@@ -247,9 +233,25 @@ body {
   font-weight: 300;
 }
 
-.sizeul {
+.row-points {
   width: 205px;
   margin-right: 10px;
+}
+.percentLanguageRus {
+  width: 100%;
+
+}
+.percentLanguageBel {
+  width: 90%;
+  
+}
+.percentLanguageEng {
+  width: 90%;
+  
+}
+.percentLanguageSpa {
+  width: 50%;
+  
 }
 
 .titleedu {
@@ -307,7 +309,7 @@ body {
   margin-bottom: 0;
 }
 
-.title2 {
+.titleAboutMe {
   text-transform: uppercase;
   color: rgb(255, 255, 255);
   letter-spacing: 1px;
@@ -442,23 +444,7 @@ p {
   margin-left: 10px;
 }
 
-.VS {
-  max-width: 213px;
-  height: 130px;
-  margin-top: 4px;
-  margin-right: 4px;
-  margin-top: 20px;
-  padding: 10px 10px;
-}
 
-.VP {
-  max-width: 213px;
-  height: 130px;
-  margin-top: 4px;
-  margin-right: 4px;
-  margin-top: 40px;
-  padding: 10px 10px;
-}
 
 .text2 {
   color: rgb(255, 255, 255);
