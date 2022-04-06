@@ -13,11 +13,18 @@ app.use("/cloud", cloudRouter);
 
 function startApp() {
   try {
-    mongoose.connect(DB_URL, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    app.listen(port, () => console.log(`Working on server ${port}`));
+    mongoose
+      .connect(DB_URL, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+      })
+      .then(() => {
+        console.log("Mongoose connected!");
+      })
+      .then(() => {
+        app.listen(port, () => console.log(`Working on server ${port}`));
+      })
+      .catch((e) => log(`error ${e}`));
   } catch (e) {
     console.log(e);
   }
