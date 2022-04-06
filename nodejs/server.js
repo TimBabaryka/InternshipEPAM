@@ -3,7 +3,7 @@ import express from "express";
 import cors from "cors";
 import cloudRouter from "./cloud/cloudRouter.js";
 import { PORT, DB_URL } from "./config.js";
-const port = PORT || 3222;
+const port = PORT | 3222;
 const app = express();
 
 app.use(cors());
