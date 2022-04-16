@@ -1,0 +1,486 @@
+@import "media.css";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.grid-main-box {
+  margin: 0 auto;
+  height: 100%;
+  width: 1300px;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.2fr 1.5fr 0.1fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+.header {
+  background: linear-gradient(rgb(92, 202, 221), rgb(162, 234, 210));
+  grid-area: header;
+  height: 501px;
+  display: flex;
+  justify-content: center;
+}
+
+.header__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header__content__mainText {
+  margin: 0 auto;
+  color: #60606e;
+}
+
+.header__content__text {
+  margin: 0 auto;
+  color: #60606e;
+}
+
+.main {
+  height: 2360px;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  grid-area: main;
+}
+
+.main__text-header {
+  text-transform: uppercase;
+  color: #60606e;
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+.main__text-support {
+  color: #60606e;
+  width: auto;
+  margin-top: 2%;
+  text-align: center;
+}
+
+.main__content {
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main__content__first__box {
+  justify-content: center;
+  display: flex;
+}
+
+.first__box__text {
+  text-align: center;
+  width: 549px;
+  height: 144px;
+}
+
+.first__box__picture {
+  background-image: url(./assets/Layer.png);
+  width: 554px;
+  height: 364px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+}
+
+.categories-box {
+  margin-top: 3%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.categories-box__columnFirst {
+  display: flex;
+  flex-direction: column;
+}
+.categories-box__columnSecond {
+  display: flex;
+  flex-direction: column;
+}
+
+ul li:before {
+  margin-right: 4px;
+  margin-bottom: 10px;
+  background-color: rgba(123, 238, 199, 1);
+  content: "\2713";
+  display: inline-block;
+  color: rgb(255, 255, 255);
+  padding: 0 1px 0 0;
+}
+
+ul li {
+  list-style-type: none;
+  font-size: 1em;
+}
+
+.main__content__second-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 3%;
+}
+
+.card-box {
+  width: 237px;
+  margin-top: 1%;
+  margin-left: 1%;
+  text-align: center;
+  max-height: 200px;
+  height: 100%;
+}
+
+.fa-heart-pulse {
+  position: relative;
+  animation: moveIcon;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+.fa-infinity {
+  position: relative;
+  animation: moveIcon;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+.fa-lightbulb {
+  position: relative;
+  animation: moveIcon;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+.fa-sliders {
+  position: relative;
+  animation: moveIcon;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+@keyframes moveIcon {
+  0% {
+    top: 0px;
+  }
+
+  50% {
+    bottom: 10px;
+  }
+
+  100% {
+    bottom: 0px;
+  }
+}
+
+.card-box__mainText {
+  text-transform: uppercase;
+}
+
+.main__content-bottom {
+  margin-top: 3%;
+  width: 100%;
+}
+
+.main__content-bottom__options-box {
+  display: flex;
+  justify-content: center;
+}
+
+.cardBox-plan {
+  margin-left: 2%;
+  padding-left: 2rem;
+  border-top: 5px solid rgba(123, 238, 199, 1);
+  width: 361px;
+  height: 490px;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.cardBox-plan:hover {
+  box-shadow: 1px 1px 27px 27px rgba(34, 60, 80, 0.24);
+  transition: 0.4s ease-in-out;
+
+  animation: changeColor;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes changeColor {
+  from {
+    background-color: rgb(92, 202, 221);
+  }
+  to {
+    background-color: rgb(238, 238, 238);
+  }
+}
+
+.cardBox-plan__text {
+  margin-bottom: 3%;
+  margin-top: 13%;
+  text-transform: uppercase;
+}
+
+.cardBox-plan__price {
+  display: flex;
+  justify-content: center;
+  padding-top: 2%;
+  color: white;
+  margin-bottom: 13%;
+  width: 166px;
+  height: 30px;
+  background-color: rgba(123, 238, 199, 1);
+}
+
+.cardBox-plan__button-price {
+  cursor: pointer;
+  margin-top: 13%;
+  text-transform: uppercase;
+  color: white;
+  width: 136px;
+  height: 30px;
+  background-color: rgba(123, 238, 199, 1);
+}
+
+.cardBox-plan__button-price:hover {
+  background-color: white;
+  color: rgba(123, 238, 199, 1);
+  transition: 0.4s ease-in-out;
+}
+
+.nav {
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  height: 330px;
+  margin-top: 3%;
+  width: 100%;
+  background-color: rgba(123, 238, 199, 1);
+}
+
+.nav__left-box {
+  justify-content: center;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+}
+.nav__left-box__text {
+  text-transform: uppercase;
+  color: white;
+}
+
+.nav__left-box__button {
+  cursor: pointer;
+  width: 166px;
+  margin-top: 13%;
+  text-transform: uppercase;
+  color: rgba(123, 238, 199, 1);
+  height: 30px;
+  background-color: rgb(255, 255, 255);
+}
+
+.nav__left-box__button:hover {
+  background-color: #60606e;
+  color: rgb(255, 255, 255);
+  transition: 0.4s ease-in-out;
+}
+
+.nav__right-box {
+  padding: 1% 1% 1% 1%;
+  justify-content: center;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
+.nav__right-box__textMain {
+  text-transform: uppercase;
+  color: #60606e;
+}
+
+.nav__right-box__textSupport {
+  margin-top: 2%;
+  color: #60606e;
+}
+
+.nav__right-box__searchField {
+  padding: 10px;
+  width: 510px;
+  height: 50px;
+}
+
+.nav__right-box__searchButton {
+  cursor: pointer;
+  width: 136px;
+  margin-top: 13%;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  height: 50px;
+  background-color: rgba(123, 238, 199, 1);
+}
+
+.nav__right-box__searchButton:hover {
+  background-color: #60606e;
+  color: rgba(123, 238, 199, 1);
+  transition: 0.4s ease-in-out;
+}
+
+.footer {
+  height: 150px;
+  grid-area: footer;
+}
+
+.footer__box {
+  height: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+}
+
+.footer__box__left {
+  width: 60%;
+  margin-bottom: 4%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer__box__left__link:hover {
+  border-radius: 5px;
+  color: white;
+  background-color: rgba(123, 238, 199, 1);
+  transition: 0.4s ease-in-out;
+}
+
+.footer__box__right {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__box__right__text {
+  margin-bottom: 15px;
+}
+
+.footer__box__left a {
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.footer__box__right__socials {
+  margin-bottom: 15%;
+  justify-content: space-around;
+  display: flex;
+}
+
+@media screen and (max-width: 768px) {
+  .grid-main-box {
+    max-width: 768px;
+    grid-template-rows: 0.2fr 2.5fr 0.1fr;
+  }
+
+  .main {
+    height: 3430px;
+  }
+
+  .main__content__first__box {
+    flex-direction: column;
+  }
+
+  .first__box__picture {
+    margin: 0 auto;
+    width: 320px;
+    height: 250px;
+  }
+  .first__box__text {
+    width: 768px;
+    height: 253px;
+  }
+
+  .main__content__second-box {
+    margin: 0 auto;
+    flex-direction: column;
+  }
+
+  .main__content-bottom {
+    margin-top: 3%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .main__content-bottom__options-box {
+    display: block;
+  }
+
+  .card-box {
+    margin-top: 10%;
+  }
+
+  .nav {
+    height: 500px;
+    flex-direction: column;
+  }
+
+  .nav__right-box {
+    margin-bottom: 5%;
+  }
+  .nav__right-box__textMain {
+    text-align: center;
+  }
+
+  .nav__right-box__search {
+    margin: 0 auto;
+  }
+
+  .footer__box__left {
+    width: 100%;
+  }
+
+  .footer__box {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .grid-main-box {
+    max-width: 368px;
+    grid-template-rows: 0.2fr 2.5fr 0.1fr;
+  }
+
+  .header {
+    width: 368px;
+  }
+
+  .main {
+    height: 3950px;
+    width: 360px;
+  }
+
+  .first__box__text {
+    width: 368px;
+    height: 286px;
+  }
+
+  .nav {
+    width: 368px;
+    height: 1075px;
+  }
+
+  .nav__right-box {
+    height: 800px;
+    width: 368px;
+  }
+
+  .nav__right-box__searchField {
+    width: 200px;
+  }
+}
