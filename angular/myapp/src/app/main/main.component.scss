@@ -1,0 +1,26 @@
+.container {
+  width: 98%;
+  height: 100vh;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.6fr 1.5fr;
+  gap: 1% 11px;
+  grid-template-areas:
+    "header"
+    "main-content";
+}
+.header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: wheat;
+  grid-area: header;
+}
+.main-content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: beige;
+  grid-area: main-content;
+}
