@@ -1,0 +1,44 @@
+.post-box {
+  margin-top: 1%;
+  width: 700px;
+  height: 230px;
+  background-color: aliceblue;
+  justify-content: center;
+  display: flex;
+  border-radius: 25px;
+  flex-direction: column;
+}
+
+.content__title {
+  height: 10%;
+  margin-top: 7px;
+  font-size: 2rem;
+}
+
+.post-box__content {
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 75%;
+  border-bottom: 1px solid black;
+}
+
+.content__description {
+  font-size: small;
+  width: 90%;
+}
+
+.content__bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.content__bottom__buttons {
+  display: flex;
+  align-items: center;
+  width: 25%;
+  justify-content: space-around;
+}
