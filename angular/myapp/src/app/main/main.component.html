@@ -18,7 +18,9 @@
 
         <input type="search" class="bottom__search" />
         <label for="my"><input type="checkbox" id="my" /> Show mine</label>
-        <button mat-raised-button color="primary">Add article</button>
+        <button mat-raised-button color="primary" (click)="createPost()">
+          Add article
+        </button>
       </div>
     </div>
   </div>

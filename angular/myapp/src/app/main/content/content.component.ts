@@ -46,5 +46,9 @@ export class ContentComponent implements OnInit {
   ];
   constructor() {}
 
+  deletePost(id: number) {
+    this.posts = this.posts.filter((el) => el.id !== id);
+  }
+
   ngOnInit(): void {}
 }

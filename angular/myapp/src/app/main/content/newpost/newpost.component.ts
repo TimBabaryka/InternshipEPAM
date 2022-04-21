@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 import { Post } from '../content.component';
 
 @Component({
@@ -7,8 +8,18 @@ import { Post } from '../content.component';
   styleUrls: ['./newpost.component.scss'],
 })
 export class NewpostComponent implements OnInit {
-  @Input() post!: Post;
+  @Input() child!: Post;
+  @Output() deletePost = new EventEmitter<number>();
   constructor() {}
+
+  checkID(i: any) {
+    console.log(i);
+  }
+
+  onDeletePost() {
+    this.deletePost.emit(this.child.id);
+    console.log(123);
+  }
 
   ngOnInit(): void {}
 }

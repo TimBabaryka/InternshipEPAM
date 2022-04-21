@@ -1,1 +1,5 @@
-<app-newpost *ngFor="let n of posts" [post]="n"></app-newpost>
+<app-newpost
+  *ngFor="let n of posts"
+  [child]="n"
+  (deletePost)="deletePost($event)"
+></app-newpost>

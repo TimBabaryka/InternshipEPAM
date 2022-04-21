@@ -1,17 +1,19 @@
 <div class="post-box">
   <div class="post-box__content">
-    <h2 class="content__title">{{ post.title }}</h2>
+    <h2 class="content__title">{{ child.title }}</h2>
     <p class="content__description">
-      {{ post.description }}
+      {{ child.description }}
     </p>
   </div>
 
   <div class="content__bottom">
-    <h3>{{ post.source }}</h3>
-    <h3>{{ post.author }}</h3>
-    <h3>{{ post.date }}</h3>
+    <h3>{{ child.source }}</h3>
+    <h3>{{ child.author }}</h3>
+    <h3>{{ child.date }}</h3>
     <div class="content__bottom__buttons">
-      <button mat-raised-button color="warn">Delete</button>
+      <button mat-raised-button color="warn" (click)="onDeletePost()">
+        Delete
+      </button>
       <button mat-raised-button color="accent">Edit</button>
     </div>
   </div>

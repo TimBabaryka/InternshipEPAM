@@ -10,8 +10,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewpostComponent } from './main/content/newpost/newpost.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { CreatepostComponent } from './main/createpost/createpost.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { NewpostComponent } from './main/content/newpost/newpost.component';
     MainComponent,
     ContentComponent,
     NewpostComponent,
+    CreatepostComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,8 +30,10 @@ import { NewpostComponent } from './main/content/newpost/newpost.component';
     BrowserAnimationsModule,
     MatButtonModule,
     ReactiveFormsModule,
+    FormsModule,
     MatInputModule,
     MatFormFieldModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
