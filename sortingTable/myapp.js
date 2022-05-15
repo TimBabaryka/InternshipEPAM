@@ -18,34 +18,34 @@ let nameArr = [
 function edit_row(no) {
   document.getElementById("edit_button" + no).style.display = "none";
   document.getElementById("save_button" + no).style.display = "block";
-
-  var name = document.getElementById("name_row" + no);
-
-  var name_data = name.innerHTML;
+  let name = document.getElementById("name_row" + no);
+  let name_data = name.innerHTML;
 
   name.innerHTML =
     "<input type='text' id='name_text" + no + "' value='" + name_data + "'>";
 }
 
 function save_row(no) {
-  var name_val = document.getElementById("name_text" + no).value;
+  let name_val = document.getElementById("name_text" + no).value;
 
   document.getElementById("name_row" + no).innerHTML = name_val;
 
   document.getElementById("edit_button" + no).style.display = "block";
   document.getElementById("save_button" + no).style.display = "none";
+  nameArr.splice(no, 1, name_val);
 }
 
 function delete_row(no) {
   document.getElementById("row" + no + "").outerHTML = "";
+  nameArr.splice(no, 1);
 }
 
 function add_row() {
-  var new_name = document.getElementById("new_name").value;
+  let new_name = document.getElementById("new_name").value;
 
-  var table = document.getElementById("data_table");
-  var table_len = table.rows.length - 1;
-  var row = (table.insertRow(table_len).outerHTML =
+  let table = document.getElementById("data_table");
+  let table_len = table.rows.length - 1;
+  let row = (table.insertRow(table_len).outerHTML =
     "<tr id='row" +
     table_len +
     "'><td id='name_row" +
@@ -139,12 +139,10 @@ function render() {
 render();
 
 document.body.addEventListener("click", (e) => {
-  let copyArr = [...nameArr];
-
   const table = document.getElementById("data_table");
   if (e.target.id === "sortButton") {
     table.innerHTML = " ";
-    let sorted = copyArr.sort(function (a, b) {
+    let sorted = nameArr.sort(function (a, b) {
       if (a < b) {
         return -1;
       }
