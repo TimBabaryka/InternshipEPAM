@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { NewsAPIService } from '../service/news-api.service';
 
 export interface Post {
   title: string;
@@ -9,12 +10,27 @@ export interface Post {
   id: number;
 }
 
+export interface Article {
+  author: string;
+  content: string;
+  description: string;
+  publishedAt: string;
+  source: {
+    id: string;
+    name: string;
+  };
+  title: string;
+  url: string;
+  urlToImage: string;
+}
+
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.scss'],
 })
 export class ContentComponent implements OnInit {
+  articlesData: any = [];
   posts: Post[] = [
     {
       title: 'New Post',
@@ -44,11 +60,18 @@ export class ContentComponent implements OnInit {
       id: 2,
     },
   ];
-  constructor() {}
+  constructor(private _services: NewsAPIService) {}
 
-  deletePost(id: number) {
-    this.posts = this.posts.filter((el) => el.id !== id);
+  deletePost(name: string) {
+    this.posts = this.articlesData.filter(
+      (el: Article) => el.source.name !== name
+    );
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._services.ContentComponent().subscribe((result) => {
+      this.articlesData = result.articles;
+      console.log(this.articlesData);
+    });
+  }
 }

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http';
+import { NewsAPIService } from './main/service/news-api.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './layout/layout.component';
@@ -25,6 +27,7 @@ import { CreatepostComponent } from './main/createpost/createpost.component';
     CreatepostComponent,
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -35,7 +38,7 @@ import { CreatepostComponent } from './main/createpost/createpost.component';
     MatFormFieldModule,
     MatDialogModule,
   ],
-  providers: [],
+  providers: [NewsAPIService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

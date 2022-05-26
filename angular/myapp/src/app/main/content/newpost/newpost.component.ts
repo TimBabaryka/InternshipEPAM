@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-import { Post } from '../content.component';
+import { Article, Post } from '../content.component';
 
 @Component({
   selector: 'app-newpost',
@@ -8,8 +8,8 @@ import { Post } from '../content.component';
   styleUrls: ['./newpost.component.scss'],
 })
 export class NewpostComponent implements OnInit {
-  @Input() child!: Post;
-  @Output() deletePost = new EventEmitter<number>();
+  @Input() child!: Article;
+  @Output() deletePost = new EventEmitter<string>();
   constructor() {}
 
   checkID(i: any) {
@@ -17,8 +17,8 @@ export class NewpostComponent implements OnInit {
   }
 
   onDeletePost() {
-    this.deletePost.emit(this.child.id);
-    console.log(123);
+    this.deletePost.emit(this.child.source.name);
+    console.log(this.child.source.name);
   }
 
   ngOnInit(): void {}
