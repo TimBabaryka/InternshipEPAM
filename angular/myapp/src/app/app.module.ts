@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NewpostComponent } from './main/content/newpost/newpost.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CreatepostComponent } from './main/createpost/createpost.component';
+import { TruncatePipe } from './pipes/truncate.pipe';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { CreatepostComponent } from './main/createpost/createpost.component';
     ContentComponent,
     NewpostComponent,
     CreatepostComponent,
+    TruncatePipe,
   ],
   imports: [
     HttpClientModule,

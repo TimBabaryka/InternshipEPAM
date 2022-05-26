@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class NewsAPIService {
   constructor(private _http: HttpClient) {}
   newsApiUrl =
-    'https://newsapi.org/v2/everything?q=tesla&from=2022-04-25&sortBy=publishedAt&apiKey=07bb7597a6544284a773020e63cc8f23';
+    'https://newsapi.org/v2/everything?q=tesla&from=2022-04-26&sortBy=publishedAt&apiKey=07bb7597a6544284a773020e63cc8f23';
 
   ContentComponent(): Observable<any> {
     return this._http.get(this.newsApiUrl);

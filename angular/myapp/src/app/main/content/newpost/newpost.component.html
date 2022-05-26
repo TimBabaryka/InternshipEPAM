@@ -1,7 +1,7 @@
 <div class="post-box">
   <div class="post-box__content">
     <div class="top-center">
-      <h4 class="content__title">{{ child.title }}</h4>
+      <h4 class="content__title">{{ child.title | titlecase }}</h4>
       <p class="content__description">
         {{ child.description }}
       </p>
@@ -14,7 +14,7 @@
 
   <div class="content__bottom">
     <h3>{{ child.source.name }}</h3>
-    <h3>{{ child.author }}</h3>
+    <h3>{{ child.author | truncate }}</h3>
     <h3>{{ child.publishedAt | date: "dd/MM/yyyy" }}</h3>
     <div class="content__bottom__buttons">
       <button (click)="onDeletePost()" mat-raised-button color="warn">
