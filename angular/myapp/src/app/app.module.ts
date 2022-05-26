@@ -20,6 +20,7 @@ import { TruncatePipe } from './pipes/truncate.pipe';
 import { NewstableComponent } from './main/newstable/newstable.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
   ],
   imports: [
     MatPaginatorModule,
+    MatSortModule,
     MatTableModule,
     HttpClientModule,
     BrowserModule,
