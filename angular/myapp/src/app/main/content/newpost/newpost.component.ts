@@ -1,4 +1,11 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  Output,
+  OnChanges,
+  SimpleChanges,
+} from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { Article, Post } from '../content.component';
 import { TruncatePipe } from 'src/app/pipes/truncate.pipe';
@@ -8,7 +15,7 @@ import { TruncatePipe } from 'src/app/pipes/truncate.pipe';
   templateUrl: './newpost.component.html',
   styleUrls: ['./newpost.component.scss'],
 })
-export class NewpostComponent implements OnInit {
+export class NewpostComponent implements OnInit, OnChanges {
   @Input() child!: Article;
   @Output() deletePost = new EventEmitter<string>();
   constructor() {}
@@ -22,5 +29,8 @@ export class NewpostComponent implements OnInit {
     console.log(this.child.source.name);
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    // console.log('ngOnChanges', changes);
+  }
   ngOnInit(): void {}
 }

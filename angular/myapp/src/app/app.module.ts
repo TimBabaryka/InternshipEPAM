@@ -17,6 +17,9 @@ import { NewpostComponent } from './main/content/newpost/newpost.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CreatepostComponent } from './main/createpost/createpost.component';
 import { TruncatePipe } from './pipes/truncate.pipe';
+import { NewstableComponent } from './main/newstable/newstable.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -26,9 +29,12 @@ import { TruncatePipe } from './pipes/truncate.pipe';
     ContentComponent,
     NewpostComponent,
     CreatepostComponent,
+    NewstableComponent,
     TruncatePipe,
   ],
   imports: [
+    MatPaginatorModule,
+    MatTableModule,
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,

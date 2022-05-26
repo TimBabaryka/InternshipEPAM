@@ -23,11 +23,12 @@
         </button>
       </div>
     </div>
-    <section class="newsHeader">
-      <h1>Top News</h1>
-      <h2>My news</h2>
-    </section>
   </div>
-
-  <app-content class="main-content"></app-content>
+  <section class="newsHeader">
+    <a class="linkPage" routerLink="content">Top News </a>
+    <a class="linkPage" routerLink="myArticles">My articles</a>
+  </section>
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
 </div>
