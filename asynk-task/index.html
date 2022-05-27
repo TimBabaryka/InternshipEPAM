@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    .content {
+      width: 100%;
+      height: 100%;
+    }
+
+    .card {
+      margin-top: 1rem;
+      width: fit-content;
+      height: fit-content;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: antiquewhite;
+      border: 1px solid black;
+    }
+  </style>
+  <body>
+    <select id="Selector">
+      <option value="1">Entries</option>
+      <option value="2">Random</option>
+      <option value="3">HealthCheck</option>
+      <option id="cat" value="4">Categories</option>
+    </select>
+
+    <div class="content"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
