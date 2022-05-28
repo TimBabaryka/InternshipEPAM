@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Post } from '../content/content.component';
+import { CommonService } from '../service/common.service';
 
 @Component({
   selector: 'app-createpost',
@@ -8,6 +9,7 @@ import { Post } from '../content/content.component';
   styleUrls: ['./createpost.component.scss'],
 })
 export class CreatepostComponent implements OnInit {
+  post!: Post;
   CardForm: FormGroup = new FormGroup({
     title: new FormControl('', [Validators.required]),
     description: new FormControl('', [Validators.required]),
@@ -15,20 +17,20 @@ export class CreatepostComponent implements OnInit {
     author: new FormControl('', [Validators.required]),
     date: new FormControl('', [Validators.required]),
   });
-  constructor() {}
+  constructor(private service: CommonService) {}
 
   onSubmitCreate() {
     const { title, description, source, author, date } = this.CardForm.value;
-    let id = 3;
     const post: Post = {
       title: title,
       description: description,
       source: source,
       author: author,
       date: date,
-      id: id,
+      id: 0,
     };
-    console.log('New Post', post);
+    // console.log('New Post', post);
+    this.service.setPost(post);
   }
 
   ngOnInit(): void {}

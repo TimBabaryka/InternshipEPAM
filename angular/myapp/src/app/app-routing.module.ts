@@ -4,10 +4,12 @@ import { LayoutComponent } from './layout/layout.component';
 import { ContentComponent } from './main/content/content.component';
 import { MainComponent } from './main/main.component';
 import { NewstableComponent } from './main/newstable/newstable.component';
+import { PostPageComponent } from './main/post-page/post-page.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/main/content' },
   { path: 'layout', component: LayoutComponent },
+  { path: 'post/:id', component: PostPageComponent },
   {
     path: 'main',
     component: MainComponent,

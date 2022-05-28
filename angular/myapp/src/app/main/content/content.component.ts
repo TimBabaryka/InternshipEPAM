@@ -17,13 +17,15 @@ export interface Post {
   styleUrls: ['./content.component.scss'],
 })
 export class ContentComponent implements OnInit {
+  message!: Post;
+
   posts: Post[] = [
     {
       title: 'New Post',
       description:
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
       source: 'Star Wars',
-      date: '20/13/16',
+      date: '2022-13-16',
       author: 'Mando',
       id: 0,
     },
@@ -32,7 +34,7 @@ export class ContentComponent implements OnInit {
       description:
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
       source: 'Star Wars1',
-      date: '20/13/17',
+      date: '2022-13-17',
       author: 'Mando1',
       id: 0,
     },
@@ -41,7 +43,7 @@ export class ContentComponent implements OnInit {
       description:
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
       source: 'Star Wars2',
-      date: '20/13/18',
+      date: '2022-13-18',
       author: 'Mando2',
       id: 0,
     },
@@ -53,7 +55,11 @@ export class ContentComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.message = this.serviceFunct.getPost();
+    if (this.message === undefined) {
+    } else {
+      this.posts.push(this.message);
+    }
     this.posts.forEach(this.serviceFunct.addId(1));
-    console.log(this.posts);
   }
 }
