@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class TruncatePipe implements PipeTransform {
   transform(text: string, length: number = 17, suffix: string = '...'): string {
     if (!text) {
-      console.log(text);
       return '...';
     }
     if (text.length > length) {

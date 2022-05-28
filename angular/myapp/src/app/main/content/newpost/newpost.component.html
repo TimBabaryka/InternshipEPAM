@@ -7,15 +7,15 @@
       </p>
     </div>
     <div>
-      <img class="image" src="{{ child.urlToImage }}" alt="NewsImage" />
-      <a class="link" target="_blank" href="{{ child.url }}">Read More</a>
+      <img class="image" src="../../../../assets/test.png" alt="NewsImage" />
+      <!-- <a class="link" target="_blank" href="{{ child.url }}">Read More</a> -->
     </div>
   </div>
 
   <div class="content__bottom">
-    <h3>{{ child.source.name }}</h3>
+    <h3>{{ child.source }}</h3>
     <h3>{{ child.author | truncate }}</h3>
-    <h3>{{ child.publishedAt | date: "dd/MM/yyyy" }}</h3>
+    <h3>{{ child.date }}</h3>
     <div class="content__bottom__buttons">
       <button (click)="onDeletePost()" mat-raised-button color="warn">
         Delete

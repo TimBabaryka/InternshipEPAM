@@ -12,8 +12,8 @@ const routes: Routes = [
     path: 'main',
     component: MainComponent,
     children: [
-      { path: 'myArticles', component: NewstableComponent },
-      { path: 'content', component: ContentComponent },
+      { path: 'myArticles', component: ContentComponent },
+      { path: 'content', component: NewstableComponent },
     ],
   },
 ];

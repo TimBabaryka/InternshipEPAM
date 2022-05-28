@@ -10,27 +10,12 @@ export interface Post {
   id: number;
 }
 
-export interface Article {
-  author: string;
-  content: string;
-  description: string;
-  publishedAt: string;
-  source: {
-    id: string;
-    name: string;
-  };
-  title: string;
-  url: string;
-  urlToImage: string;
-}
-
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
   styleUrls: ['./content.component.scss'],
 })
 export class ContentComponent implements OnInit {
-  articlesData: any = [];
   posts: Post[] = [
     {
       title: 'New Post',
@@ -62,16 +47,9 @@ export class ContentComponent implements OnInit {
   ];
   constructor(private _services: NewsAPIService) {}
 
-  deletePost(name: string) {
-    this.posts = this.articlesData.filter(
-      (el: Article) => el.source.name !== name
-    );
+  deletePost(id: number) {
+    this.posts = this.posts.filter((el: Post) => el.id !== id);
   }
 
-  ngOnInit(): void {
-    this._services.ContentComponent().subscribe((result) => {
-      this.articlesData = result.articles;
-      console.log(this.articlesData);
-    });
-  }
+  ngOnInit(): void {}
 }

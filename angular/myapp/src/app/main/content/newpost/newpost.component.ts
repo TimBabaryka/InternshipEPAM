@@ -7,7 +7,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { EventEmitter } from '@angular/core';
-import { Article, Post } from '../content.component';
+import { Post } from '../content.component';
 import { TruncatePipe } from 'src/app/pipes/truncate.pipe';
 
 @Component({
@@ -16,8 +16,8 @@ import { TruncatePipe } from 'src/app/pipes/truncate.pipe';
   styleUrls: ['./newpost.component.scss'],
 })
 export class NewpostComponent implements OnInit, OnChanges {
-  @Input() child!: Article;
-  @Output() deletePost = new EventEmitter<string>();
+  @Input() child!: Post;
+  @Output() deletePost = new EventEmitter<number>();
   constructor() {}
 
   checkID(i: any) {
@@ -25,12 +25,11 @@ export class NewpostComponent implements OnInit, OnChanges {
   }
 
   onDeletePost() {
-    this.deletePost.emit(this.child.source.name);
-    console.log(this.child.source.name);
+    this.deletePost.emit(this.child.id);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    // console.log('ngOnChanges', changes);
+    console.log('ngOnChanges', changes);
   }
   ngOnInit(): void {}
 }

@@ -1,7 +1,7 @@
 <div class="container">
   <div class="header">
     <div class="headerBox">
-      <h1 class="headerBox__title">Source Name</h1>
+      <h1 class="headerBox__title">IBook</h1>
       <div class="headerBox__bottom">
         <div class="bottom__options">
           <h4>Basic native select</h4>
@@ -17,7 +17,7 @@
         </div>
 
         <input type="search" class="bottom__search" />
-        <label for="my"><input type="checkbox" id="my" /> Show mine</label>
+        <!-- <label for="my"><input type="checkbox" id="my" /> Show mine</label> -->
         <button mat-raised-button color="primary" (click)="createPost()">
           Add article
         </button>
@@ -25,11 +25,11 @@
     </div>
   </div>
   <section class="newsHeader">
-    <a class="linkPage" routerLink="content" routerLinkActive="active-link"
-      >Top News
-    </a>
     <a class="linkPage" routerLink="myArticles" routerLinkActive="active-link"
-      >My articles</a
+      >My articles
+    </a>
+    <a class="linkPage" routerLink="content" routerLinkActive="active-link"
+      >Top News</a
     >
   </section>
 

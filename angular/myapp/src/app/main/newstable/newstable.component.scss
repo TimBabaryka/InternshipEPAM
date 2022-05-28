@@ -7,11 +7,59 @@ table {
 }
 
 .mat-form-field {
-  font-size: 14px;
+  font-size: 12px;
   width: 100%;
 }
 
-td,
-th {
-  width: 25%;
+tr.mat-row,
+tr.mat-footer-row {
+  height: 10rem;
+}
+
+// td,
+// th {
+//   width: fit-content;
+//   margin-left: 1rem;
+// }
+
+.content__title {
+  font-weight: bold;
+}
+th.mat-header-cell:last-of-type,
+td.mat-cell:last-of-type,
+td.mat-footer-cell:last-of-type {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+td.mat-cell {
+  text-align: center;
+}
+
+.paginatorPage {
+  padding: 10px 10px;
+}
+
+.image {
+  width: 10rem;
+  height: 8rem;
+  padding-right: 1rem;
+}
+
+.link {
+  width: 5rem;
+  margin: 0 auto;
+  color: white;
+  background-color: black;
+  border-radius: 10px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.link:hover {
+  background-color: rgb(180, 217, 224);
+  color: rgb(255, 255, 255);
+  transition: 0.3s ease-in-out;
 }
