@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { NewsAPIService } from '../service/news-api.service';
+
+import { CommonService } from '../service/common.service';
 
 export interface Post {
   title: string;
@@ -7,7 +8,7 @@ export interface Post {
   source: string;
   date: string;
   author: string;
-  id: number;
+  id: number | undefined;
 }
 
 @Component({
@@ -33,7 +34,7 @@ export class ContentComponent implements OnInit {
       source: 'Star Wars1',
       date: '20/13/17',
       author: 'Mando1',
-      id: 1,
+      id: 0,
     },
     {
       title: 'New Post2',
@@ -42,14 +43,17 @@ export class ContentComponent implements OnInit {
       source: 'Star Wars2',
       date: '20/13/18',
       author: 'Mando2',
-      id: 2,
+      id: 0,
     },
   ];
-  constructor(private _services: NewsAPIService) {}
+  constructor(private serviceFunct: CommonService) {}
 
   deletePost(id: number) {
     this.posts = this.posts.filter((el: Post) => el.id !== id);
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.posts.forEach(this.serviceFunct.addId(1));
+    console.log(this.posts);
+  }
 }

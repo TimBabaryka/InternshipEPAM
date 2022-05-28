@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { NewsAPIService } from '../service/news-api.service';
+import { CommonService } from '../service/common.service';
 
 export interface UserData {
   id: string;
@@ -32,7 +33,10 @@ export class NewstableComponent implements OnInit {
   articlesData: UserData[] = [];
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
-  constructor(private _services: NewsAPIService) {}
+  constructor(
+    private _services: NewsAPIService,
+    private serviceFunc: CommonService
+  ) {}
 
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
@@ -46,7 +50,7 @@ export class NewstableComponent implements OnInit {
   ngOnInit(): void {
     this._services.ContentComponent().subscribe((result) => {
       this.articlesData = result.articles;
-      this.articlesData.forEach(addId(1));
+      this.articlesData.forEach(this.serviceFunc.addId(1));
       this.dataSource = new MatTableDataSource(this.articlesData);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
@@ -54,13 +58,13 @@ export class NewstableComponent implements OnInit {
   }
 }
 
-function addId(id: number) {
-  return function iter(o: any) {
-    if ('title' in o) {
-      o.id = id++;
-    }
-    Object.keys(o).forEach(function (k) {
-      Array.isArray(o[k]) && o[k].forEach(iter);
-    });
-  };
-}
+// function addId(id: number) {
+//   return function iter(o: any) {
+//     if ('title' in o) {
+//       o.id = id++;
+//     }
+//     Object.keys(o).forEach(function (k) {
+//       Array.isArray(o[k]) && o[k].forEach(iter);
+//     });
+//   };
+// }
