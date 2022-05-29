@@ -10,7 +10,7 @@ export class AuthService {
   constructor(private http: HttpClient) {}
   login(email: string, password: string) {
     return this.http
-      .post('http://localhost:3222/api/login', {
+      .post('http://localhost:3223/app/login', {
         email,
         password,
       })
@@ -30,6 +30,14 @@ export class AuthService {
     localStorage.removeItem('idToken');
     localStorage.removeItem('authuser');
     // this.todo.setActiveId(null);
+  }
+
+  registration(email: string, password: string, username: string) {
+    return this.http.post('http://localhost:3223/app/registration', {
+      email,
+      password,
+      username,
+    });
   }
 
   private setSession(res: any) {

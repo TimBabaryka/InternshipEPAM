@@ -6,10 +6,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { RouterModule, Routes } from '@angular/router';
+import { RegFormComponent } from './reg-form/reg-form.component';
 
 const routes: Routes = [{ path: 'login', component: AuthFormComponent }];
 @NgModule({
-  declarations: [AuthFormComponent],
+  declarations: [AuthFormComponent, RegFormComponent],
   imports: [
     CommonModule,
     MatButtonModule,

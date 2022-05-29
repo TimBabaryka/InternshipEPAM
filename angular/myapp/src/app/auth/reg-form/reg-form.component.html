@@ -1,0 +1,69 @@
+<div class="reg-box">
+  <div class="container">
+    <div class="reg-form">
+      <h1 class="title">Registration page</h1>
+      <form
+        [formGroup]="RegForm"
+        (ngSubmit)="onSubmitReg()"
+        class="reg-form__form"
+      >
+        <mat-form-field class="reg-form__row" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input
+            type="email"
+            matInput
+            placeholder="email@domain.com"
+            formControlName="email"
+            autocomplete="off"
+          />
+        </mat-form-field>
+
+        <mat-form-field
+          class="reg-form__row"
+          hintLabel="Min 4 symbols"
+          appearance="fill"
+        >
+          <mat-label>Password</mat-label>
+
+          <input
+            formControlName="password"
+            matInput
+            [type]="hide ? 'password' : 'text'"
+            autocomplete="off"
+          />
+          <button
+            mat-icon-button
+            matSuffix
+            (click)="hide = !hide"
+            [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide"
+          >
+            <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <mat-form-field class="reg-form__row --username" appearance="fill">
+          <mat-label>Username</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="John Doe"
+            formControlName="username"
+            autocomplete="off"
+          />
+        </mat-form-field>
+
+        <button
+          class="submit-btn"
+          type="submit"
+          color="primary"
+          [disabled]="RegForm.invalid"
+          mat-raised-button
+        >
+          Sign Up
+        </button>
+        <a class="auth-button-reg" routerLink="/login"> Already registered? </a>
+      </form>
+    </div>
+  </div>
+</div>
