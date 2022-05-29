@@ -1,0 +1,26 @@
+<div class="post-box">
+  <div class="post-box__content">
+    <div class="top-center">
+      <h4 class="content__title">{{ child.title | titlecase }}</h4>
+      <p class="content__description">
+        {{ child.description }}
+      </p>
+    </div>
+    <div>
+      <img class="image" src="../../../../assets/test.png" alt="NewsImage" />
+      <!-- <a class="link" target="_blank" href="{{ child.url }}">Read More</a> -->
+    </div>
+  </div>
+
+  <div class="content__bottom">
+    <h3>{{ child.source }}</h3>
+    <h3>{{ child.author | truncate }}</h3>
+    <h3>{{ child.date }}</h3>
+    <div class="content__bottom__buttons">
+      <button (click)="onDeletePost()" mat-raised-button color="warn">
+        Delete
+      </button>
+      <button mat-raised-button color="accent">Edit</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="header">
+    <div class="headerBox">
+      <h1 class="headerBox__title">IBook</h1>
+      <div class="headerBox__bottom">
+        <div class="bottom__options">
+          <h4>Basic native select</h4>
+          <mat-form-field appearance="fill">
+            <mat-label>Cars</mat-label>
+            <select matNativeControl required>
+              <option value="volvo">Volvo</option>
+              <option value="saab">Saab</option>
+              <option value="mercedes">Mercedes</option>
+              <option value="audi">Audi</option>
+            </select>
+          </mat-form-field>
+        </div>
+
+        <input type="search" class="bottom__search" />
+        <!-- <label for="my"><input type="checkbox" id="my" /> Show mine</label> -->
+        <button mat-raised-button color="primary" (click)="createPost()">
+          Add article
+        </button>
+      </div>
+    </div>
+  </div>
+  <section class="newsHeader">
+    <a class="linkPage" routerLink="myArticles" routerLinkActive="active-link"
+      >My articles
+    </a>
+    <a class="linkPage" routerLink="content" routerLinkActive="active-link"
+      >Top News</a
+    >
+  </section>
+
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
