@@ -21,6 +21,8 @@ import { NewstableComponent } from './main/newstable/newstable.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { MatSortModule } from '@angular/material/sort';
     CreatepostComponent,
     NewstableComponent,
     TruncatePipe,
+    NotfoundComponent,
   ],
   imports: [
     MatPaginatorModule,
@@ -45,6 +48,7 @@ import { MatSortModule } from '@angular/material/sort';
     ReactiveFormsModule,
     FormsModule,
     MatInputModule,
+    AuthModule,
     MatFormFieldModule,
     MatDialogModule,
   ],
