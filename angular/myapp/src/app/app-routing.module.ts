@@ -12,13 +12,17 @@ import { RegFormComponent } from './auth/reg-form/reg-form.component';
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/main/content' },
   { path: 'registration', component: RegFormComponent },
-  { path: 'post/:id', component: PostPageComponent },
+
   {
     path: 'main',
     component: MainComponent,
     canActivate: [AuthGuard],
     children: [
-      { path: 'myArticles', component: ContentComponent },
+      {
+        path: 'myArticles',
+        component: ContentComponent,
+      },
+      { path: 'myArticles/article/:id', component: PostPageComponent },
       { path: 'content', component: NewstableComponent },
       {
         path: '**',

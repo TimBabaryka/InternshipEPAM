@@ -17,19 +17,15 @@ import { TruncatePipe } from 'src/app/pipes/truncate.pipe';
 })
 export class NewpostComponent implements OnInit, OnChanges {
   @Input() child!: Post;
-  @Output() deletePost = new EventEmitter<number>();
+  // @Output() deletePost = new EventEmitter<number>();
   constructor() {}
 
-  checkID(i: any) {
-    console.log(i);
-  }
-
-  onDeletePost() {
-    this.deletePost.emit(this.child.id);
-  }
+  // onDeletePost() {
+  //   this.deletePost.emit(this.child.id);
+  // }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('ngOnChanges', changes);
+    // console.log('ngOnChanges', changes);
   }
   ngOnInit(): void {}
 }

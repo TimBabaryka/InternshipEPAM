@@ -7,7 +7,7 @@
       </p>
     </div>
     <div>
-      <img class="image" src="../../../../assets/test.png" alt="NewsImage" />
+      <img class="image" src="../../../../assets/myArt.jpg" alt="NewsImage" />
       <!-- <a class="link" target="_blank" href="{{ child.url }}">Read More</a> -->
     </div>
   </div>
@@ -16,11 +16,18 @@
     <h3>{{ child.source }}</h3>
     <h3>{{ child.author | truncate }}</h3>
     <h3>{{ child.date }}</h3>
+
     <div class="content__bottom__buttons">
-      <button (click)="onDeletePost()" mat-raised-button color="warn">
+      <!-- <button (click)="onDeletePost()" mat-raised-button color="warn">
         Delete
+      </button> -->
+      <button
+        routerLink="article/{{ child._id }}"
+        mat-raised-button
+        color="accent"
+      >
+        More Action
       </button>
-      <button mat-raised-button color="accent">Edit</button>
     </div>
   </div>
 </div>

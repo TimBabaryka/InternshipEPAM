@@ -9,7 +9,7 @@ export interface Post {
   source: string;
   date: string;
   author: string;
-  id?: number | undefined;
+  _id?: string;
 }
 
 @Component({
@@ -21,31 +21,19 @@ export class ContentComponent implements OnInit {
   // message!: Post;
   user!: any;
   posts: Post[] = [];
-  // posts: Post[] = [
-  //   {
-  //     title: 'New Post',
-  //     description:
-  //       'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-  //     source: 'Star Wars',
-  //     date: '2022-13-16',
-  //     author: 'Mando',
-  //     id: 0,
-  //   },
-  // ];
+
   constructor(
-    private serviceFunct: CommonService,
-    public loaderService: LoaderService
+    private serviceFunct: CommonService // public loaderService: LoaderService
   ) {}
 
-  deletePost(id: number) {
-    this.posts = this.posts.filter((el: Post) => el.id !== id);
-  }
+  // deletePost(id: number) {
+  //   this.posts = this.posts.filter((el: Post) => el.id !== id);
+  // }
 
   getDataArticle() {
     this.serviceFunct.getData().subscribe((data) => {
       this.user = data;
       this.posts = this.user.user.articles;
-      console.log(this.posts);
     });
   }
 
@@ -60,6 +48,6 @@ export class ContentComponent implements OnInit {
     // } else {
     //   this.posts.push(this.message);
     // }
-    this.posts.forEach(this.serviceFunct.addId(1));
+    // this.posts.forEach(this.serviceFunct.addId(1));
   }
 }

@@ -27,6 +27,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoaderService } from './spinner/loader.service';
 import { InterceptorService } from './spinner/interceptor.service';
 import { MatIconModule } from '@angular/material/icon';
+import { PostPageComponent } from './main/post-page/post-page.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { MatIconModule } from '@angular/material/icon';
     CreatepostComponent,
     NewstableComponent,
     TruncatePipe,
+    PostPageComponent,
     NotfoundComponent,
   ],
   imports: [

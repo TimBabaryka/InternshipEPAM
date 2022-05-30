@@ -13,20 +13,18 @@ export class CommonService {
   constructor(private http: HttpClient) {}
 
   addPost(
-    author: string,
-    source: string,
-    date: string,
     title: string,
     description: string,
-    image?: string
+    source: string,
+    author: string,
+    date: string
   ) {
     return this.http.post('http://localhost:3223/app/addPost', {
-      author,
-      source,
-      date,
       title,
       description,
-      image,
+      source,
+      author,
+      date,
     });
   }
 

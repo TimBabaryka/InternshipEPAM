@@ -6,6 +6,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 10%;
+    background-color: cornflowerblue;
+    border-radius: 10px;
+  }
+
+  .header .mat-icon:hover {
+    color: white;
+    transition: 0.3s ease-in-out;
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid grey;
   }
   h1 {
     margin-bottom: 0.5rem;
@@ -16,7 +30,14 @@
       margin-right: 1rem;
     }
   }
+  p {
+    font-family: "Times New Roman", Georgia, Serif;
+  }
+}
+
+.title {
+  text-align: center;
 }
 .cont-text {
-  border-bottom: 2px solid grey;
+  font-family: "Times New Roman", Georgia, Serif;
 }
