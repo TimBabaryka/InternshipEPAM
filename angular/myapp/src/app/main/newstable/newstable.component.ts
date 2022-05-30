@@ -4,6 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { NewsAPIService } from '../service/news-api.service';
 import { CommonService } from '../service/common.service';
+import { LoaderService } from 'src/app/spinner/loader.service';
 
 export interface UserData {
   id: string;
@@ -35,7 +36,8 @@ export class NewstableComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
   constructor(
     private _services: NewsAPIService,
-    private serviceFunc: CommonService
+    private serviceFunc: CommonService,
+    public loaderService: LoaderService
   ) {}
 
   applyFilter(event: Event) {

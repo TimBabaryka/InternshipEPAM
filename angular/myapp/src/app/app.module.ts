@@ -24,6 +24,9 @@ import { MatSortModule } from '@angular/material/sort';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { AuthModule } from './auth/auth.module';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { LoaderService } from './spinner/loader.service';
+import { InterceptorService } from './spinner/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -51,9 +54,11 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     MatInputModule,
     AuthModule,
     MatFormFieldModule,
+    MatProgressSpinnerModule,
     MatDialogModule,
   ],
   providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true },
     { provide: NewsAPIService },
     {
       provide: HTTP_INTERCEPTORS,

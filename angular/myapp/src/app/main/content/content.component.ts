@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { CommonService } from '../service/common.service';
+import { LoaderService } from 'src/app/spinner/loader.service';
 
 export interface Post {
   title: string;
@@ -48,7 +49,10 @@ export class ContentComponent implements OnInit {
       id: 0,
     },
   ];
-  constructor(private serviceFunct: CommonService) {}
+  constructor(
+    private serviceFunct: CommonService,
+    public loaderService: LoaderService
+  ) {}
 
   deletePost(id: number) {
     this.posts = this.posts.filter((el: Post) => el.id !== id);
