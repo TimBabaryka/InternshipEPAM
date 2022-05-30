@@ -69,7 +69,7 @@ class AppController {
       const decodedData = jwt.verify(token, DB_URL);
       req.regUser = decodedData;
 
-      const { title, description, source, author, date, image } = req.body;
+      const { title, description, source, author, date } = req.body;
 
       const createdPost = await regUser.findOneAndUpdate(
         { _id: `${decodedData.id}` },
@@ -81,7 +81,6 @@ class AppController {
                 source: `${source}`,
                 author: `${author}`,
                 date: `${date}`,
-                image: `${image}`,
                 description: `${description}`,
               },
             ],
@@ -106,7 +105,7 @@ class AppController {
       const { id } = req.params;
       // const { post } = req.body;
 
-      const { title, description, source, author, date, image } = req.body;
+      const { title, description, source, author, date } = req.body;
 
       const postData = await regUser.updateOne(
         {
@@ -120,7 +119,6 @@ class AppController {
             "articles.$.source": source,
             "articles.$.author": author,
             "articles.$.date": date,
-            "articles.$.image": image,
           },
         },
         { multi: true }
@@ -148,6 +146,27 @@ class AppController {
       return res.json(deletedArticle);
     } catch (e) {
       res.status(500).json(e);
+    }
+  }
+
+  async getUser(req, res) {
+    try {
+      const token = req.headers.authorization.split(" ")[1];
+      if (!token) {
+        return res.status(403).json({ message: "User is not authorized1" });
+      }
+      const decodedData = jwt.verify(token, DB_URL);
+      req.authUser = decodedData;
+
+      const user = await regUser.findById(decodedData.id);
+
+      if (user) {
+        return res.json({ user });
+      }
+      return res.send(user);
+    } catch (e) {
+      console.log(e);
+      res.status(400).json({ message: "User search failed" });
     }
   }
 }

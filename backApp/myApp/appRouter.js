@@ -10,4 +10,5 @@ appRouter.post("/addPost", appController.addPost);
 appRouter.post("/editPost/:id", appController.editPost);
 
 appRouter.delete("/deleteArticle/:id", appController.deleteArticle);
+appRouter.get("/getUser", appController.getUser);
 export default appRouter;
