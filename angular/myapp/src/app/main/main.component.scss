@@ -61,6 +61,8 @@
   flex-direction: column;
 }
 .headerBox__title {
+  font-family: "Times New Roman", Georgia, Serif;
+  color: white;
   padding-top: 10px;
   font-size: 2rem;
   display: flex;
@@ -81,4 +83,29 @@
 .bottom__search {
   width: 25%;
   height: 30px;
+}
+
+.name-box {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.mat-icon {
+  color: #c6d3fa;
+}
+
+.logout {
+  top: 10px;
+  right: 10px;
+  position: absolute;
+  cursor: pointer;
+}
+.logout .mat-icon:hover {
+  color: black;
+}
+
+.icon-name {
+  font-family: "Times New Roman", Georgia, Serif;
+  color: #c6d3fa;
+  line-height: 1.5rem;
 }

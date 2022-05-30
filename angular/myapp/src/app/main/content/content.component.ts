@@ -19,6 +19,7 @@ export interface Post {
 })
 export class ContentComponent implements OnInit {
   message!: Post;
+  user!: object;
 
   posts: Post[] = [
     {
@@ -28,24 +29,6 @@ export class ContentComponent implements OnInit {
       source: 'Star Wars',
       date: '2022-13-16',
       author: 'Mando',
-      id: 0,
-    },
-    {
-      title: 'New Post1',
-      description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-      source: 'Star Wars1',
-      date: '2022-13-17',
-      author: 'Mando1',
-      id: 0,
-    },
-    {
-      title: 'New Post2',
-      description:
-        'Lorem Ipsum is simply dummy text of the printing and typesetting industry',
-      source: 'Star Wars2',
-      date: '2022-13-18',
-      author: 'Mando2',
       id: 0,
     },
   ];
@@ -58,7 +41,15 @@ export class ContentComponent implements OnInit {
     this.posts = this.posts.filter((el: Post) => el.id !== id);
   }
 
+  // getUserData() {
+  //   this.serviceFunct.getCardDatas().subscribe((data) => {
+  //     console.log(data);
+  //     this.user = data;
+  //   });
+  // }
+
   ngOnInit(): void {
+    // this.getUserData();
     this.message = this.serviceFunct.getPost();
     if (this.message === undefined) {
     } else {

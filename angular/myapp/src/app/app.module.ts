@@ -27,6 +27,7 @@ import { AuthInterceptor } from './auth/auth.interceptor';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoaderService } from './spinner/loader.service';
 import { InterceptorService } from './spinner/interceptor.service';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { InterceptorService } from './spinner/interceptor.service';
     AuthModule,
     MatFormFieldModule,
     MatProgressSpinnerModule,
+    MatIconModule,
     MatDialogModule,
   ],
   providers: [

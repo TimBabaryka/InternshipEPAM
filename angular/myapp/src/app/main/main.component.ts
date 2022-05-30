@@ -3,16 +3,19 @@ import { MatDialog } from '@angular/material/dialog';
 import { AuthService } from '../auth/services/auth.service';
 import { Router } from '@angular/router';
 import { CreatepostComponent } from './createpost/createpost.component';
+import { CommonService } from './service/common.service';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent implements OnInit {
+  user!: any;
   constructor(
     private dialogRef: MatDialog,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private commonServ: CommonService
   ) {}
   get isLoggedIn() {
     return this.authService.isLoggedIn();
@@ -26,5 +29,9 @@ export class MainComponent implements OnInit {
   createPost() {
     this.dialogRef.open(CreatepostComponent);
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.commonServ.getUserData();
+    this.user = this.commonServ.getUser();
+    // console.log(this.user);
+  }
 }

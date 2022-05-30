@@ -21,7 +21,16 @@
         <button mat-raised-button color="primary" (click)="createPost()">
           Add article
         </button>
-        <button routerLink="/login" (click)="logout()">Logout</button>
+        <div class="logout">
+          <mat-icon routerLink="/login" (click)="logout()"
+            >exit_to_app</mat-icon
+          >
+        </div>
+
+        <div class="name-box">
+          <mat-icon>face</mat-icon>
+          <h1 class="icon-name">Hello, {{ user.user.username }}</h1>
+        </div>
       </div>
     </div>
   </div>
