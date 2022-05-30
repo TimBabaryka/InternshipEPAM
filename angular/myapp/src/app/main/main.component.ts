@@ -30,8 +30,11 @@ export class MainComponent implements OnInit {
     this.dialogRef.open(CreatepostComponent);
   }
   ngOnInit(): void {
-    this.commonServ.getUserData();
-    this.user = this.commonServ.getUser();
+    this.commonServ.getData().subscribe((data) => {
+      this.user = data;
+    });
+    // this.commonServ.getUserData();
+    // this.user = this.commonServ.getUser();
     // console.log(this.user);
   }
 }

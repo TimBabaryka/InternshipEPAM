@@ -27,10 +27,13 @@ export class CreatepostComponent implements OnInit {
       source: source,
       author: author,
       date: date,
-      id: 0,
+      // id: 0,
     };
-    // console.log('New Post', post);
-    this.service.setPost(post);
+    this.service
+      .addPost(title, description, source, author, date)
+      .subscribe(() => {
+        this.service.addArticle$.next(null);
+      });
   }
 
   ngOnInit(): void {}

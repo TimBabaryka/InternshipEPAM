@@ -7,9 +7,28 @@ import { HttpClient, HttpParams } from '@angular/common/http';
   providedIn: 'root',
 })
 export class CommonService {
+  addArticle$ = new Subject();
   user!: any;
   dataPost!: Post;
   constructor(private http: HttpClient) {}
+
+  addPost(
+    author: string,
+    source: string,
+    date: string,
+    title: string,
+    description: string,
+    image?: string
+  ) {
+    return this.http.post('http://localhost:3223/app/addPost', {
+      author,
+      source,
+      date,
+      title,
+      description,
+      image,
+    });
+  }
 
   getData() {
     return this.http.get('http://localhost:3223/app/getUser', {});
@@ -18,7 +37,6 @@ export class CommonService {
   getUserData() {
     this.getData().subscribe((data) => {
       this.user = data;
-      // console.log(this.user);
     });
   }
 

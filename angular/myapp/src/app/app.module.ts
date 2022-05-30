@@ -5,7 +5,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NewsAPIService } from './main/service/news-api.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LayoutComponent } from './layout/layout.component';
 import { MainComponent } from './main/main.component';
 import { ContentComponent } from './main/content/content.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -32,7 +31,6 @@ import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent,
     MainComponent,
     ContentComponent,
     NewpostComponent,
