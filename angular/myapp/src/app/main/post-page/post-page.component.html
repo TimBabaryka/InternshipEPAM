@@ -41,6 +41,12 @@
       [disabled]="!editActive"
       [(ngModel)]="dataOFActiveCard.date"
     />
+    <input
+      class="title"
+      type="text"
+      [disabled]="!editActive"
+      [(ngModel)]="dataOFActiveCard.source"
+    />
   </div>
 
   <div class="mainText">
@@ -54,11 +60,11 @@
     ></textarea>
   </div>
 
-  <div *ngIf="deleteActive === true">
-    <button (click)="deleteArticle()" mat-fab color="warn">Delete</button>
+  <div *ngIf="editActive === true">
+    <button (click)="editArticle()" mat-button color="primary">Save</button>
   </div>
 
-  <div *ngIf="editActive === true">
-    <button (click)="editArticle()" mat-button color="warn">Save</button>
+  <div *ngIf="deleteActive === true">
+    <button (click)="deleteArticle()" mat-fab color="warn">Delete</button>
   </div>
 </div>

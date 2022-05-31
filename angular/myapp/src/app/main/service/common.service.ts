@@ -15,7 +15,7 @@ export class CommonService {
   dataPost!: Post;
   constructor(private http: HttpClient) {}
 
-  sendArticleEdit(id: string, post: object) {
+  sendArticleEdit(id: string, post: any) {
     return this.http.post(`http://localhost:3223/app/editPost/${id}`, {
       post,
     });
@@ -53,7 +53,7 @@ export class CommonService {
     return this.http
       .delete(`http://localhost:3223/app/deleteArticle/${id}`)
       .subscribe(() => {
-        // this.deletePost$.next(null);
+        this.deletePost$.next(null);
       });
   }
 

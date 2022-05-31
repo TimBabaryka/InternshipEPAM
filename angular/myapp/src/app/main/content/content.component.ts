@@ -45,6 +45,9 @@ export class ContentComponent implements OnInit {
     this.serviceFunct.deletePost$.subscribe(() => {
       this.getDataArticle();
     });
+    this.serviceFunct.editPost$.subscribe(() => {
+      this.getDataArticle();
+    });
 
     // this.message = this.serviceFunct.getPost();
     // if (this.message === undefined) {

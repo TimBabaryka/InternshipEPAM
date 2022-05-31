@@ -26,29 +26,26 @@ export class PostPageComponent implements OnInit {
     });
   }
 
-  saveAndSend() {
-    this.serviceCom
-      .sendArticleEdit(this.activeId, this.dataOFActiveCard)
-      .subscribe(() => {
-        this.serviceCom.editPost$.next(null);
-      });
-  }
-
   deleteArticle() {
     this.serviceCom.deletePost(this.activeId);
     this.router.navigateByUrl('/main/myArticles');
   }
 
   editArticle() {
-    console.log(1);
+    this.serviceCom
+      .sendArticleEdit(this.activeId, this.dataOFActiveCard)
+      .subscribe(() => {
+        this.editActive = false;
+        this.serviceCom.editPost$.next(null);
+      });
   }
 
   ngOnInit(): void {
     this.getUserData();
-    this.activeId = this.serviceCom.getActiveId();
 
-    // this.serviceCom.deletePost$.subscribe(() => {
-    //   this.getUserData();
-    // });
+    this.activeId = this.serviceCom.getActiveId();
+    this.serviceCom.editPost$.subscribe(() => {
+      this.getUserData();
+    });
   }
 }
