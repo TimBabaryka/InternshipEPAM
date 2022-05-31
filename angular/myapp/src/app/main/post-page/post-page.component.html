@@ -2,30 +2,63 @@
   <div class="header-top">
     <h1 class="cont-text">My article</h1>
     <div class="header">
-      <mat-icon routerLink="../..">backspace</mat-icon>
-      <mat-icon>edit</mat-icon>
+      <mat-icon
+        routerLink="../.."
+        *ngIf="editActive === false && deleteActive === false"
+        >exit_to_app</mat-icon
+      >
+      <mat-icon
+        *ngIf="deleteActive === false"
+        (click)="editActive = !editActive"
+        [ngClass]="{ colorW: editActive }"
+        >edit</mat-icon
+      >
+      <mat-icon
+        *ngIf="editActive === false"
+        (click)="deleteActive = !deleteActive"
+        [ngClass]="{ colorW: deleteActive }"
+        >delete</mat-icon
+      >
     </div>
   </div>
-
-  <h1 class="title">Title</h1>
+  <input
+    class="title"
+    type="text"
+    [disabled]="!editActive"
+    [(ngModel)]="dataOFActiveCard.title"
+  />
 
   <div class="info">
-    <strong>Author</strong>
-    <small>12.19.2009</small>
+    <input
+      class="title"
+      type="text"
+      [disabled]="!editActive"
+      [(ngModel)]="dataOFActiveCard.author"
+    />
+    <input
+      class="title"
+      type="text"
+      [disabled]="!editActive"
+      [(ngModel)]="dataOFActiveCard.date"
+    />
   </div>
 
-  <div>
-    <p>
-      efwfewfew jwef ewnjf wej fnnewj fnjwenj enwj nwenj nwjenj wenj njewnj ewnj
-      jewfjewkfnlewf ewfm ewknf oewf bweuibf ew f
-    </p>
-    <p>
-      efwfewfew jwef ewnjf wej fnnewj fnjwenj enwj nwenj nwjenj wenj njewnj ewnj
-      jewfjewkfnlewf ewfm ewknf oewf bweuibf ew f
-    </p>
-    <p>
-      efwfewfew jwef ewnjf wej fnnewj fnjwenj enwj nwenj nwjenj wenj njewnj ewnj
-      jewfjewkfnlewf ewfm ewknf oewf bweuibf ew f
-    </p>
+  <div class="mainText">
+    <textarea
+      class="title"
+      type="text"
+      [disabled]="!editActive"
+      [(ngModel)]="dataOFActiveCard.description"
+      cols="40"
+      rows="5"
+    ></textarea>
+  </div>
+
+  <div *ngIf="deleteActive === true">
+    <button (click)="deleteArticle()" mat-fab color="warn">Delete</button>
+  </div>
+
+  <div *ngIf="editActive === true">
+    <button (click)="editArticle()" mat-button color="warn">Save</button>
   </div>
 </div>

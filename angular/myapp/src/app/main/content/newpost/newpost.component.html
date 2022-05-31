@@ -23,6 +23,7 @@
       </button> -->
       <button
         routerLink="article/{{ child._id }}"
+        (click)="onPostClick(child._id)"
         mat-raised-button
         color="accent"
       >

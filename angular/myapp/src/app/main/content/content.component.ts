@@ -9,7 +9,7 @@ export interface Post {
   source: string;
   date: string;
   author: string;
-  _id?: string;
+  _id: string;
 }
 
 @Component({
@@ -40,6 +40,9 @@ export class ContentComponent implements OnInit {
   ngOnInit(): void {
     this.getDataArticle();
     this.serviceFunct.addArticle$.subscribe(() => {
+      this.getDataArticle();
+    });
+    this.serviceFunct.deletePost$.subscribe(() => {
       this.getDataArticle();
     });
 

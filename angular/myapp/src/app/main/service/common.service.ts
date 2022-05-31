@@ -7,10 +7,27 @@ import { HttpClient, HttpParams } from '@angular/common/http';
   providedIn: 'root',
 })
 export class CommonService {
+  activeId!: string;
   addArticle$ = new Subject();
+  deletePost$ = new Subject();
+  editPost$ = new Subject();
   user!: any;
   dataPost!: Post;
   constructor(private http: HttpClient) {}
+
+  sendArticleEdit(id: string, post: object) {
+    return this.http.post(`http://localhost:3223/app/editPost/${id}`, {
+      post,
+    });
+  }
+
+  setActiveId(data: any) {
+    this.activeId = data;
+  }
+
+  getActiveId() {
+    return this.activeId;
+  }
 
   addPost(
     title: string,
@@ -30,6 +47,14 @@ export class CommonService {
 
   getData() {
     return this.http.get('http://localhost:3223/app/getUser', {});
+  }
+
+  deletePost(id: string) {
+    return this.http
+      .delete(`http://localhost:3223/app/deleteArticle/${id}`)
+      .subscribe(() => {
+        // this.deletePost$.next(null);
+      });
   }
 
   getUserData() {

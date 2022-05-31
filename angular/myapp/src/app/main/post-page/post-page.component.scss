@@ -1,12 +1,15 @@
 .post {
   text-align: center;
   padding: 10px 10px;
+  width: 100%;
+  background-color: white;
+  min-width: 360px;
 
   .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 10%;
+    width: 20%;
     background-color: cornflowerblue;
     border-radius: 10px;
   }
@@ -36,8 +39,22 @@
 }
 
 .title {
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: none;
   text-align: center;
 }
 .cont-text {
   font-family: "Times New Roman", Georgia, Serif;
+}
+
+.mainText {
+  border-bottom: 1px solid black;
+  margin-bottom: 10px;
+}
+
+.colorW {
+  margin: 0 auto;
+  color: white;
 }
