@@ -105,7 +105,7 @@ class AppController {
       const { id } = req.params;
       // const { post } = req.body;
 
-      const { title, description, source, author, date } = req.body;
+      const { post } = req.body;
 
       const postData = await regUser.updateOne(
         {
@@ -114,11 +114,11 @@ class AppController {
         },
         {
           $set: {
-            "articles.$.title": title,
-            "articles.$.description": description,
-            "articles.$.source": source,
-            "articles.$.author": author,
-            "articles.$.date": date,
+            "articles.$.title": post.title,
+            "articles.$.description": post.description,
+            "articles.$.source": post.source,
+            "articles.$.author": post.author,
+            "articles.$.date": post.date,
           },
         },
         { multi: true }
