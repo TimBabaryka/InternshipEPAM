@@ -63,12 +63,13 @@
 .headerBox__title {
   font-family: "Times New Roman", Georgia, Serif;
   color: white;
-  padding-top: 10px;
+  padding-top: 5px;
   font-size: 2rem;
   display: flex;
   justify-content: center;
 }
 .headerBox__bottom {
+  height: 6rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -95,17 +96,91 @@
 }
 
 .logout {
-  top: 10px;
-  right: 10px;
-  position: absolute;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+
   cursor: pointer;
+  display: flex;
+  text-decoration: none;
+  color: #c6d3fa;
+
+  .mat-icon {
+    padding-bottom: 0rem;
+  }
+  h1 {
+    margin: 0;
+  }
 }
-.logout .mat-icon:hover {
-  color: black;
+.logout:hover {
+  background-color: rgb(0, 0, 0);
+  .mat-icon {
+    color: rgb(255, 255, 255);
+  }
+  color: rgb(255, 253, 253);
 }
 
 .icon-name {
   font-family: "Times New Roman", Georgia, Serif;
   color: #c6d3fa;
   line-height: 1.5rem;
+}
+
+.accordion {
+  display: block;
+  max-width: 12rem;
+}
+
+.accordion-item {
+  display: block;
+  border: solid 1px #ccc;
+}
+
+.example-accordion-item + .example-accordion-item {
+  border-top: none;
+}
+
+.example-accordion-item-header {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.example-accordion-item-description {
+  font-size: 0.85em;
+  color: #999;
+}
+
+.example-accordion-item-header,
+.example-accordion-item-body {
+  height: 2rem;
+  padding: 3px;
+}
+
+.example-accordion-item-header:hover {
+  cursor: pointer;
+  background-color: #eee;
+}
+
+.vs-viewport {
+  height: 5rem;
+  width: 10rem;
+  border: 1px solid black;
+}
+
+.vs-item {
+  background-color: white;
+  height: 3rem;
+  border-bottom: 1px solid black;
+}
+
+.vs-item:hover {
+  background-color: #a8bbf4;
+}
+
+.vs-size {
+  color: #000000;
+  text-decoration: none;
+  text-align: center;
+  font-size: 0.7rem;
 }

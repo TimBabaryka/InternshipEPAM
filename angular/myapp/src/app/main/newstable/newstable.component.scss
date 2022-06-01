@@ -2,6 +2,10 @@
   width: auto;
 }
 
+.cdk-table {
+  background-color: white;
+}
+
 table {
   width: 100%;
 }
@@ -11,8 +15,8 @@ table {
   width: 100%;
 }
 
-tr.mat-row,
-tr.mat-footer-row {
+tr.cdk-row,
+tr.cdk-footer-row {
   height: 10rem;
 }
 
@@ -25,14 +29,14 @@ tr.mat-footer-row {
 .content__title {
   font-weight: bold;
 }
-th.mat-header-cell:last-of-type,
-td.mat-cell:last-of-type,
-td.mat-footer-cell:last-of-type {
+th.cdk-header-cell:last-of-type,
+td.cdk-cell:last-of-type,
+td.cdk-footer-cell:last-of-type {
   padding-left: 1rem;
   padding-right: 1rem;
 }
 
-td.mat-cell {
+td.cdk-cell {
   text-align: center;
 }
 

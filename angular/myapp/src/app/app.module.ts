@@ -28,6 +28,9 @@ import { LoaderService } from './spinner/loader.service';
 import { InterceptorService } from './spinner/interceptor.service';
 import { MatIconModule } from '@angular/material/icon';
 import { PostPageComponent } from './main/post-page/post-page.component';
+import { CdkAccordionModule } from '@angular/cdk/accordion';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { CdkTableModule } from '@angular/cdk/table';
 
 @NgModule({
   declarations: [
@@ -39,6 +42,7 @@ import { PostPageComponent } from './main/post-page/post-page.component';
     NewstableComponent,
     TruncatePipe,
     PostPageComponent,
+
     NotfoundComponent,
   ],
   imports: [
@@ -57,6 +61,10 @@ import { PostPageComponent } from './main/post-page/post-page.component';
     MatFormFieldModule,
     MatProgressSpinnerModule,
     MatIconModule,
+    CdkAccordionModule,
+    CdkTableModule,
+    ScrollingModule,
+
     MatDialogModule,
   ],
   providers: [

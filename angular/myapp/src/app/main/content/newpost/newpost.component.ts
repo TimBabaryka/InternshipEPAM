@@ -17,16 +17,11 @@ import { CommonService } from '../../service/common.service';
   styleUrls: ['./newpost.component.scss'],
 })
 export class NewpostComponent implements OnInit, OnChanges {
-  // activeCardId!: any;
   @Input() child!: Post;
-  // @Output() deletePost = new EventEmitter<number>();
+
   constructor(private serviceCom: CommonService) {}
 
-  // onDeletePost() {
-  //   this.deletePost.emit(this.child.id);
-  // }
   onPostClick(id: string) {
-    // this.activeCardId = id;
     this.serviceCom.setActiveId(id);
   }
 

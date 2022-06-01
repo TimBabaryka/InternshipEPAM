@@ -3,7 +3,7 @@
     <div class="top-center">
       <h4 class="content__title">{{ child.title | titlecase }}</h4>
       <p class="content__description">
-        {{ child.description }}
+        {{ child.description | truncate: 400 }}
       </p>
     </div>
     <div>
@@ -18,9 +18,6 @@
     <h3>{{ child.date }}</h3>
 
     <div class="content__bottom__buttons">
-      <!-- <button (click)="onDeletePost()" mat-raised-button color="warn">
-        Delete
-      </button> -->
       <button
         routerLink="article/{{ child._id }}"
         (click)="onPostClick(child._id)"
