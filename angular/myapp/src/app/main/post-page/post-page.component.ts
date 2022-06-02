@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./post-page.component.scss'],
 })
 export class PostPageComponent implements OnInit {
+  value: any;
   activeId!: string;
   dataOFActiveCard: any;
   data: any;

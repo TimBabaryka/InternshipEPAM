@@ -1,7 +1,12 @@
 <div class="post-box">
   <div class="post-box__content">
     <div class="top-center">
-      <h4 class="content__title">{{ child.title | titlecase }}</h4>
+      <!-- <h4 class="content__title">{{ child.title | titlecase }}</h4> -->
+      <div class="example-boundary">
+        <div class="content__title" cdkDragBoundary=".example-boundary" cdkDrag>
+          {{ child.title | titlecase }}
+        </div>
+      </div>
       <p class="content__description">
         {{ child.description | truncate: 400 }}
       </p>

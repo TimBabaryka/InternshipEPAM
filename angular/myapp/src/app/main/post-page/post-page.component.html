@@ -53,12 +53,30 @@
     <textarea
       class="title"
       type="text"
+      cols="30"
+      rows="10"
+      [disabled]="!editActive"
+      [(ngModel)]="dataOFActiveCard.description"
+    ></textarea>
+
+    <!-- <textarea
+      class="title"
+      type="text"
       [disabled]="!editActive"
       [(ngModel)]="dataOFActiveCard.description"
       cols="40"
       rows="5"
-    ></textarea>
+    ></textarea> -->
   </div>
+
+  <button
+    *ngIf="editActive === false && deleteActive === false"
+    mat-raised-button
+    color="primary"
+    [cdkCopyToClipboard]="dataOFActiveCard.description"
+  >
+    Copy to clipboard
+  </button>
 
   <div *ngIf="editActive === true">
     <button (click)="editArticle()" mat-button color="primary">Save</button>
