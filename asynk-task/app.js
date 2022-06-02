@@ -19,7 +19,7 @@ function changeListener() {
   }
   if (value === "2") {
     content.innerHTML = ``;
-    getCategories();
+    getRandom();
   }
   if (value === "3") {
     content.innerHTML = ``;
@@ -27,7 +27,7 @@ function changeListener() {
   }
   if (value === "4") {
     content.innerHTML = ``;
-    getRandom();
+    getCategories();
   }
 }
 
@@ -72,13 +72,9 @@ async function getCategories() {
   }
 }
 async function getCheck() {
-  try {
-    const res = await fetch("https://api.publicapis.org/health");
-    const data = await res.json();
-    console.log("data", data);
-  } catch (e) {
-    console.log(e);
-  }
+  const res = await fetch("https://api.publicapis.org/health");
+  const data = await res.json();
+  console.log("data", data);
 }
 async function getRandom() {
   try {
