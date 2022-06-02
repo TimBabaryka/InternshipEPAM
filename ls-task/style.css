@@ -1,0 +1,22 @@
+body {
+  width: 100%;
+  max-width: 1920px;
+  background-color: antiquewhite;
+}
+
+.btn {
+  background-color: aquamarine;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+.btn:hover {
+  background-color: rgb(147, 122, 228);
+  color: white;
+}
+
+.name {
+  color: brown;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
