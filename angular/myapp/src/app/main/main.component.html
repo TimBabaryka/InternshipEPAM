@@ -3,33 +3,6 @@
     <div class="headerBox">
       <h1 class="headerBox__title">IBook</h1>
       <div class="headerBox__bottom">
-        <div class="bottom__options">
-          <cdk-virtual-scroll-viewport
-            appendOnly
-            itemSize="50"
-            class="vs-viewport"
-          >
-            <a
-              *cdkVirtualFor="let item of news"
-              class="vs-size"
-              target="_blank"
-              href="{{ item.url }}"
-            >
-              <div class="vs-item">
-                <div *ngIf="loaderService.isLoading | async" class="spinner">
-                  <mat-spinner></mat-spinner>
-                </div>
-                {{ item.title | truncate: 40 }}
-              </div>
-            </a>
-          </cdk-virtual-scroll-viewport>
-        </div>
-
-        <input type="search" class="bottom__search" />
-        <button mat-raised-button color="primary" (click)="createPost()">
-          Add article
-        </button>
-
         <cdk-accordion class="accordion">
           <cdk-accordion-item
             #accordionItem="cdkAccordionItem"
@@ -42,11 +15,9 @@
             >
               <div class="name-box">
                 <mat-icon>face</mat-icon>
-                <h1 class="icon-name">Welcome, {{ user.user.username }}</h1>
+                <h1 class="icon-name">Welcome, {{ user?.username }}</h1>
               </div>
-              <span class="example-accordion-item-description">
-                <!-- Click to {{ accordionItem.expanded ? "close" : "open" }} -->
-              </span>
+              <span class="example-accordion-item-description"> </span>
             </div>
             <div
               class="example-accordion-item-body"
@@ -60,11 +31,27 @@
             </div>
           </cdk-accordion-item>
         </cdk-accordion>
-
-        <!-- <div class="name-box">
-          <mat-icon>face</mat-icon>
-          <h1 class="icon-name">Welcome, {{ user.user.username }}</h1>
-        </div> -->
+        <div class="bottom__options">
+          <cdk-virtual-scroll-viewport
+            appendOnly
+            itemSize="50"
+            class="vs-viewport"
+          >
+            <a
+              *cdkVirtualFor="let item of news"
+              class="vs-size"
+              target="_blank"
+              href="{{ item.url }}"
+            >
+              <div class="vs-item">
+                {{ item.title | truncate: 40 }}
+              </div>
+            </a>
+          </cdk-virtual-scroll-viewport>
+          <button mat-raised-button color="primary" (click)="createPost()">
+            Add article
+          </button>
+        </div>
       </div>
     </div>
   </div>

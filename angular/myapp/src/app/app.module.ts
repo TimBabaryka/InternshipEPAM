@@ -31,6 +31,7 @@ import { PostPageComponent } from './main/post-page/post-page.component';
 import { CdkAccordionModule } from '@angular/cdk/accordion';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CdkTableModule } from '@angular/cdk/table';
+
 import { ClipboardModule } from '@angular/cdk/clipboard';
 
 import { DragDropModule } from '@angular/cdk/drag-drop';
@@ -45,6 +46,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     NewstableComponent,
     TruncatePipe,
     PostPageComponent,
+
     NotfoundComponent,
   ],
   imports: [
@@ -68,6 +70,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     ClipboardModule,
     ScrollingModule,
     DragDropModule,
+
     MatDialogModule,
   ],
   providers: [

@@ -9,7 +9,7 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./reg-form.component.scss'],
 })
 export class RegFormComponent implements OnInit {
-  message: any;
+  message!: string;
   hide = true;
   RegForm: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -27,7 +27,7 @@ export class RegFormComponent implements OnInit {
       () => {
         this.router.navigateByUrl('/login');
       },
-      (err: any) => (this.message = err)
+      (err: string) => (this.message = err)
     );
   }
 

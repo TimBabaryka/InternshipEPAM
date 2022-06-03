@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs/operators';
-// import { MainComponent } from 'src/app/main/main.component';
 
 @Injectable({
   providedIn: 'root',
@@ -29,7 +28,6 @@ export class AuthService {
     localStorage.removeItem('expiresIn');
     localStorage.removeItem('idToken');
     localStorage.removeItem('authuser');
-    // this.todo.setActiveId(null);
   }
 
   registration(email: string, password: string, username: string) {

@@ -6,7 +6,7 @@ import {
   OnChanges,
   SimpleChanges,
 } from '@angular/core';
-import { EventEmitter } from '@angular/core';
+
 import { Post } from '../content.component';
 import { TruncatePipe } from 'src/app/pipes/truncate.pipe';
 import { CommonService } from '../../service/common.service';
@@ -26,7 +26,7 @@ export class NewpostComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    // console.log('ngOnChanges', changes);
+    console.log('ngOnChanges', changes);
   }
   ngOnInit(): void {}
 }

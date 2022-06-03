@@ -21,14 +21,7 @@ export class CreatepostComponent implements OnInit {
 
   onSubmitCreate() {
     const { title, description, source, author, date } = this.CardForm.value;
-    // const post: Post = {
-    //   title: title,
-    //   description: description,
-    //   source: source,
-    //   author: author,
-    //   date: date,
-    //   // id: 0,
-    // };
+
     this.service
       .addPost(title, description, source, author, date)
       .subscribe(() => {

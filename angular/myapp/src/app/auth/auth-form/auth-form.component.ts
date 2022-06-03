@@ -9,7 +9,7 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./auth-form.component.scss'],
 })
 export class AuthFormComponent implements OnInit {
-  message: any;
+  message!: string;
   hide = true;
   loginForm: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
@@ -26,7 +26,7 @@ export class AuthFormComponent implements OnInit {
       () => {
         this.router.navigateByUrl('/main/content');
       },
-      (err: any) => (this.message = err)
+      (err: string) => (this.message = err)
     );
   }
 

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ContentComponent, Post } from '../content/content.component';
-import { Subject } from 'rxjs';
+import { map, Observable, Subject } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { User } from '../models/model';
 
 @Injectable({
   providedIn: 'root',
@@ -11,17 +12,17 @@ export class CommonService {
   addArticle$ = new Subject();
   deletePost$ = new Subject();
   editPost$ = new Subject();
-  user!: any;
+  user!: User;
   dataPost!: Post;
   constructor(private http: HttpClient) {}
 
-  sendArticleEdit(id: string, post: any) {
+  sendArticleEdit(id: string, post: User) {
     return this.http.post(`http://localhost:3223/app/editPost/${id}`, {
       post,
     });
   }
 
-  setActiveId(data: any) {
+  setActiveId(data: string) {
     this.activeId = data;
   }
 
@@ -45,8 +46,10 @@ export class CommonService {
     });
   }
 
-  getData() {
-    return this.http.get('http://localhost:3223/app/getUser', {});
+  getData(): Observable<User> {
+    return this.http
+      .get<{ user: User }>('http://localhost:3223/app/getUser', {})
+      .pipe(map((res) => res.user));
   }
 
   deletePost(id: string) {
